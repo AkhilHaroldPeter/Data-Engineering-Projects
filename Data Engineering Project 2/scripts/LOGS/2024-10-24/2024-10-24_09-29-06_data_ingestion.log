@@ -1,7 +1,0 @@
-2024-10-24 09:29:06,935 - INFO - Created new log file.
-2024-10-24 09:29:07,073 - INFO - ##################################################
-2024-10-24 09:29:07,073 - INFO - STEP 2 : Pushing the data to table
-2024-10-24 09:29:07,073 - INFO - ##################################################
-2024-10-24 09:29:07,120 - INFO - Table 'transactions' already exists.
-2024-10-24 09:29:15,963 - INFO - Data processing completed successfully. Total records pushed: 0.
-2024-10-24 09:29:15,969 - INFO - The IDs 1-26052 already exist in the table, hence skipping.
