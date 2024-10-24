@@ -41,21 +41,21 @@ Before running the project, ensure you have the following software installed:
 To ensure all functionalities work correctly, install the following Python packages. You can do this via pip:
 
 ```bash
-pip install cohere pandas numpy sqlalchemy pyodbc python-docx fpdf
+pip install cohere pandas numpy sqlalchemy pyodbc python-docx reportlab
 ```
 
 #### Packages for Each Script
-convert_to_tuple_format.py: No additional packages required.
-create_doc.py: Requires ```python-docx``` for creating Word documents.
-create_pdf.py: Requires ```fpdf``` for generating PDF reports.
-File_content_generator.py: Requires ```cohere``` for generating insights from the Cohere API.
-get_latest_log_file.py: No additional packages required.
-Kaggle_data_download.py: Requires requests to interact with the ```Kaggle API```.
-Output_Generation.py: No additional packages required.
-read_sql_file.py: No additional packages required.
-setup_logging.py: No additional packages required.
-sql_analysis.py: Requires  ```pyodbc``` for SQL Server connectivity.
-Table_Creation_and_data_loading.py: Requires ```pyodbc``` for table creation and data loading.
+- convert_to_tuple_format.py: No additional packages required.
+- create_doc.py: Requires ```python-docx``` for creating Word documents.
+- create_pdf.py: Requires ```reportlab``` for generating PDF reports.
+- File_content_generator.py: Requires ```cohere``` for generating insights from the Cohere API.
+- get_latest_log_file.py: No additional packages required.
+- Kaggle_data_download.py: Requires requests to interact with the ```Kaggle API```.
+- Output_Generation.py: No additional packages required.
+- read_sql_file.py: No additional packages required.
+- setup_logging.py: No additional packages required.
+- sql_analysis.py: Requires  ```pyodbc``` for SQL Server connectivity.
+- Table_Creation_and_data_loading.py: Requires ```pyodbc``` for table creation and data loading.
 
 ## Project Structure
 
