@@ -1,0 +1,429 @@
+2024-10-24 09:49:51,059 - INFO - Created new session log file.
+2024-10-24 09:49:51,063 - INFO - ##################################################
+2024-10-24 09:49:51,063 - INFO - STEP 1 : Extarcting data from kagggle
+2024-10-24 09:49:51,063 - INFO - ##################################################
+2024-10-24 09:49:51,063 - INFO - Starting data download...
+2024-10-24 09:49:52,932 - INFO - Files in the zip archive: ['Credit card transactions - India - Simple.csv']
+2024-10-24 09:49:52,932 - INFO - Processing the data in chunks...
+2024-10-24 09:49:52,949 - INFO - Processed 10000 rows of data.
+2024-10-24 09:49:52,970 - INFO - Processed 10000 rows of data.
+2024-10-24 09:49:52,979 - INFO - Processed 6052 rows of data.
+2024-10-24 09:49:53,044 - INFO - Data processing and transmission to NiFi completed successfully.
+2024-10-24 09:49:53,995 - INFO - Appending to existing log file.
+2024-10-24 09:49:54,109 - INFO - ##################################################
+2024-10-24 09:49:54,109 - INFO - STEP 2 : Pushing the data to table
+2024-10-24 09:49:54,110 - INFO - ##################################################
+2024-10-24 09:49:54,154 - INFO - Table 'transactions' already exists.
+2024-10-24 09:50:04,333 - INFO - Data processing completed successfully. Total records pushed: 0.
+2024-10-24 09:50:04,338 - INFO - The IDs 1-26052 already exist in the table, hence skipping.
+2024-10-24 09:50:05,516 - INFO - Appending to existing log file.
+2024-10-24 09:50:05,517 - INFO - Appending to existing log file.
+2024-10-24 09:50:05,518 - INFO - ##################################################
+2024-10-24 09:50:05,518 - INFO - STEP 3 : Creating Reports
+2024-10-24 09:50:05,518 - INFO - ##################################################
+2024-10-24 09:50:05,518 - INFO - Establishing database connection...
+2024-10-24 09:50:05,519 - INFO - ##################################################
+2024-10-24 09:50:05,519 - INFO - STEP 3 : Creating Reports
+2024-10-24 09:50:05,519 - INFO - ##################################################
+2024-10-24 09:50:05,519 - INFO - Establishing database connection...
+2024-10-24 09:50:05,526 - INFO - Appending to existing log file.
+2024-10-24 09:50:05,527 - INFO - ##################################################
+2024-10-24 09:50:05,527 - INFO - STEP 3 : Creating Reports
+2024-10-24 09:50:05,527 - INFO - ##################################################
+2024-10-24 09:50:05,528 - INFO - Establishing database connection...
+2024-10-24 09:50:05,534 - INFO - Appending to existing log file.
+2024-10-24 09:50:05,535 - INFO - Appending to existing log file.
+2024-10-24 09:50:05,536 - INFO - ##################################################
+2024-10-24 09:50:05,536 - INFO - STEP 3 : Creating Reports
+2024-10-24 09:50:05,536 - INFO - ##################################################
+2024-10-24 09:50:05,536 - INFO - Establishing database connection...
+2024-10-24 09:50:05,536 - INFO - ##################################################
+2024-10-24 09:50:05,536 - INFO - STEP 3 : Creating Reports
+2024-10-24 09:50:05,536 - INFO - ##################################################
+2024-10-24 09:50:05,536 - INFO - Establishing database connection...
+2024-10-24 09:50:05,539 - INFO - Appending to existing log file.
+2024-10-24 09:50:05,540 - INFO - ##################################################
+2024-10-24 09:50:05,540 - INFO - STEP 3 : Creating Reports
+2024-10-24 09:50:05,540 - INFO - ##################################################
+2024-10-24 09:50:05,540 - INFO - Establishing database connection...
+2024-10-24 09:50:05,564 - INFO - Appending to existing log file.
+2024-10-24 09:50:05,565 - INFO - ##################################################
+2024-10-24 09:50:05,566 - INFO - STEP 3 : Creating Reports
+2024-10-24 09:50:05,566 - INFO - ##################################################
+2024-10-24 09:50:05,566 - INFO - Establishing database connection...
+2024-10-24 09:50:05,574 - INFO - Database connection established successfully.
+2024-10-24 09:50:05,575 - INFO - SQL filename: Weekend vs Weekday Transaction Patterns.sql
+2024-10-24 09:50:05,575 - INFO - SQL query read from file: SELECT 
+    city,
+    CASE 
+        WHEN DATEPART(WEEKDAY, transaction_date) IN (1, 7) THEN 'Weekend'
+        ELSE 'Weekday' 
+    END AS day_type,
+    COUNT(*) AS total_transactions,
+    SUM(amount) AS total_spend
+FROM 
+    transactions
+GROUP BY 
+    city, 
+    CASE 
+        WHEN DATEPART(WEEKDAY, transaction_date) IN (1, 7) THEN 'Weekend'
+        ELSE 'Weekday' 
+    END;
+
+2024-10-24 09:50:05,575 - INFO - Appending to existing log file.
+2024-10-24 09:50:05,576 - INFO - Database connection established successfully.
+2024-10-24 09:50:05,576 - INFO - SQL filename: Highest Spending Gender.sql
+2024-10-24 09:50:05,576 - INFO - SQL query read from file: SELECT 
+    city,
+    gender,
+    SUM(amount) AS total_spend
+FROM 
+    transactions
+GROUP BY 
+    city, 
+    gender
+ORDER BY 
+    city, 
+    total_spend DESC;
+
+2024-10-24 09:50:05,577 - INFO - ##################################################
+2024-10-24 09:50:05,577 - INFO - STEP 3 : Creating Reports
+2024-10-24 09:50:05,577 - INFO - ##################################################
+2024-10-24 09:50:05,577 - INFO - Establishing database connection...
+2024-10-24 09:50:05,582 - INFO - Database connection established successfully.
+2024-10-24 09:50:05,582 - INFO - SQL filename: Top 5 Expense Categories.sql
+2024-10-24 09:50:05,582 - INFO - SQL query read from file: 
+SELECT top 5
+    exp_type, 
+    SUM(amount) AS total_spend,
+    (SUM(amount) * 100.0 / (SELECT SUM(amount) FROM DEProject.dbo.transactions)) AS percentage_contribution
+FROM 
+    [transactions]
+GROUP BY 
+    exp_type
+ORDER BY 
+    total_spend DESC;
+2024-10-24 09:50:05,594 - INFO - Appending to existing log file.
+2024-10-24 09:50:05,594 - INFO - ##################################################
+2024-10-24 09:50:05,594 - INFO - STEP 3 : Creating Reports
+2024-10-24 09:50:05,594 - INFO - ##################################################
+2024-10-24 09:50:05,594 - INFO - Establishing database connection...
+2024-10-24 09:50:05,603 - INFO - Database connection established successfully.
+2024-10-24 09:50:05,603 - INFO - SQL filename: Year over Year Spend Growth.sql
+2024-10-24 09:50:05,603 - INFO - SQL query read from file: WITH YearlySpend AS (
+    SELECT 
+        city,
+        card_type,
+        YEAR(transaction_date) AS year,
+        SUM(amount) AS total_spend
+    FROM 
+        transactions
+    WHERE 
+        YEAR(transaction_date) IN (2013, 2014)
+    GROUP BY 
+        city, 
+        card_type, 
+        YEAR(transaction_date)
+)
+SELECT 
+    y2014.city,
+    y2014.card_type,
+    (y2014.total_spend - COALESCE(y2013.total_spend, 0)) AS growth
+FROM 
+    YearlySpend y2014
+LEFT JOIN 
+    YearlySpend y2013 
+ON 
+    y2014.city = y2013.city 
+    AND y2014.card_type = y2013.card_type 
+    AND y2013.year = 2013
+WHERE 
+    y2014.year = 2014
+ORDER BY 
+    growth DESC
+OFFSET 0 ROWS FETCH NEXT 1 ROW ONLY; -- SQL Server syntax for LIMIT
+
+2024-10-24 09:50:05,618 - INFO - Database connection established successfully.
+2024-10-24 09:50:05,619 - INFO - SQL filename: Average Spend Per Transaction by Card Type.sql
+2024-10-24 09:50:05,619 - INFO - SQL query read from file: SELECT 
+    card_type, 
+    YEAR(transaction_date) AS transaction_year,
+    MONTH(transaction_date) AS transaction_month,
+    AVG(amount) AS average_spend_per_transaction
+FROM 
+    transactions
+GROUP BY 
+    card_type, 
+    YEAR(transaction_date),
+    MONTH(transaction_date);
+2024-10-24 09:50:05,656 - INFO - Database connection established successfully.
+2024-10-24 09:50:05,656 - INFO - SQL query executed successfully. Retrieved 5 rows.
+2024-10-24 09:50:05,657 - INFO - SQL filename: Spend by Gender Across Cities.sql
+2024-10-24 09:50:05,657 - INFO - SQL query read from file: SELECT 
+    city,
+    gender,
+    SUM(amount) AS total_spend,
+    (SUM(amount) * 100.0 / (SELECT SUM(amount) FROM transactions WHERE city = ct.city)) AS percentage_contribution
+FROM 
+    transactions ct
+GROUP BY 
+    city, 
+    gender;
+2024-10-24 09:50:05,660 - INFO - Cursor closed.
+2024-10-24 09:50:05,664 - INFO - Database connection closed.
+2024-10-24 09:50:05,671 - INFO - Database connection established successfully.
+2024-10-24 09:50:05,671 - INFO - SQL filename: Spend Distribution Across Card Types.sql
+2024-10-24 09:50:05,672 - INFO - SQL query read from file: SELECT 
+    card_type, 
+    MAX(amount) AS highest_spend_amount, 
+    MIN(amount) AS lowest_spend_amount
+FROM 
+    transactions
+GROUP BY 
+    card_type;
+2024-10-24 09:50:05,672 - INFO - SQL query executed successfully. Retrieved 1783 rows.
+2024-10-24 09:50:05,679 - INFO - Database connection established successfully.
+2024-10-24 09:50:05,679 - INFO - SQL filename: Fastest Growth in Spending.sql
+2024-10-24 09:50:05,679 - INFO - SQL query read from file: WITH TransactionCounts AS (
+    SELECT 
+        card_type,
+        COUNT(*) AS transaction_count,
+        SUM(amount) AS total_spend
+    FROM 
+        transactions
+    GROUP BY 
+        card_type
+)
+SELECT TOP 1 
+    card_type,
+    transaction_count,
+    total_spend,
+    (total_spend * 1.0 / transaction_count) AS average_spend_per_transaction
+FROM 
+    TransactionCounts
+ORDER BY 
+    average_spend_per_transaction DESC;
+
+2024-10-24 09:50:05,681 - INFO - Cursor closed.
+2024-10-24 09:50:05,682 - INFO - SQL query executed successfully. Retrieved 1876 rows.
+2024-10-24 09:50:05,684 - INFO - SQL query executed successfully. Retrieved 80 rows.
+2024-10-24 09:50:05,685 - INFO - Database connection closed.
+2024-10-24 09:50:05,687 - INFO - Database connection established successfully.
+2024-10-24 09:50:05,687 - INFO - SQL filename: Cumulative Spend by City.sql
+2024-10-24 09:50:05,688 - INFO - SQL query read from file: WITH CumulativeSpending AS (
+    SELECT 
+        city,
+        transaction_date,
+        SUM(amount) OVER (PARTITION BY city ORDER BY transaction_date) AS cumulative_spend
+    FROM 
+        transactions
+)
+SELECT 
+    city,
+    MIN(transaction_date) AS first_date_to_reach_500k
+FROM 
+    CumulativeSpending
+WHERE 
+    cumulative_spend >= 500000
+GROUP BY 
+    city;
+
+2024-10-24 09:50:05,690 - INFO - Cursor closed.
+2024-10-24 09:50:05,693 - INFO - Cursor closed.
+2024-10-24 09:50:05,712 - INFO - Database connection closed.
+2024-10-24 09:50:05,714 - INFO - SQL query executed successfully. Retrieved 4 rows.
+2024-10-24 09:50:05,716 - INFO - Database connection closed.
+2024-10-24 09:50:05,721 - INFO - Cursor closed.
+2024-10-24 09:50:05,726 - INFO - Database connection closed.
+2024-10-24 09:50:05,728 - INFO - SQL query executed successfully. Retrieved 1 rows.
+2024-10-24 09:50:05,734 - INFO - Cursor closed.
+2024-10-24 09:50:05,740 - INFO - Database connection closed.
+2024-10-24 09:50:05,753 - INFO - SQL query executed successfully. Retrieved 1 rows.
+2024-10-24 09:50:05,758 - INFO - Cursor closed.
+2024-10-24 09:50:05,761 - INFO - SQL query executed successfully. Retrieved 1876 rows.
+2024-10-24 09:50:05,766 - INFO - Database connection closed.
+2024-10-24 09:50:05,773 - INFO - Cursor closed.
+2024-10-24 09:50:05,774 - INFO - Database connection closed.
+2024-10-24 09:50:06,368 - INFO - SQL query executed successfully. Retrieved 796 rows.
+2024-10-24 09:50:06,373 - INFO - Cursor closed.
+2024-10-24 09:50:06,374 - INFO - Database connection closed.
+2024-10-24 09:50:09,458 - INFO - Appending to existing log file.
+2024-10-24 09:50:09,459 - INFO - ##################################################
+2024-10-24 09:50:09,459 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 09:50:09,459 - INFO - ##################################################
+2024-10-24 09:50:09,459 - INFO - Processing file: Weekend_vs_Weekday_Transaction_Patterns
+2024-10-24 09:50:09,460 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Weekend_vs_Weekday_Transaction_Patterns
+2024-10-24 09:50:09,461 - INFO - Appending to existing log file.
+2024-10-24 09:50:09,461 - INFO - ##################################################
+2024-10-24 09:50:09,461 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 09:50:09,461 - INFO - ##################################################
+2024-10-24 09:50:09,461 - INFO - Processing file: Top_5_Expense_Categories
+2024-10-24 09:50:09,462 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 09:50:09,463 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Top_5_Expense_Categories
+2024-10-24 09:50:09,464 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 09:50:09,469 - INFO - Read DataFrame with 5 rows
+2024-10-24 09:50:09,469 - INFO - Generating content using File_content_generator...
+2024-10-24 09:50:09,478 - INFO - Appending to existing log file.
+2024-10-24 09:50:09,478 - INFO - ##################################################
+2024-10-24 09:50:09,479 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 09:50:09,479 - INFO - ##################################################
+2024-10-24 09:50:09,479 - INFO - Processing file: Average_Spend_Per_Transaction_by_Card_Type
+2024-10-24 09:50:09,480 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Average_Spend_Per_Transaction_by_Card_Type
+2024-10-24 09:50:09,481 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 09:50:09,487 - INFO - Read DataFrame with 80 rows
+2024-10-24 09:50:09,487 - INFO - Generating content using File_content_generator...
+2024-10-24 09:50:09,490 - INFO - Appending to existing log file.
+2024-10-24 09:50:09,490 - INFO - ##################################################
+2024-10-24 09:50:09,490 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 09:50:09,490 - INFO - ##################################################
+2024-10-24 09:50:09,490 - INFO - Processing file: Highest_Spending_Gender
+2024-10-24 09:50:09,491 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Highest_Spending_Gender
+2024-10-24 09:50:09,492 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 09:50:09,500 - INFO - Read DataFrame with 1876 rows
+2024-10-24 09:50:09,534 - INFO - Appending to existing log file.
+2024-10-24 09:50:09,534 - INFO - ##################################################
+2024-10-24 09:50:09,534 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 09:50:09,534 - INFO - ##################################################
+2024-10-24 09:50:09,534 - INFO - Processing file: Spend_Distribution_Across_Card_Types
+2024-10-24 09:50:09,535 - INFO - Appending to existing log file.
+2024-10-24 09:50:09,535 - INFO - ##################################################
+2024-10-24 09:50:09,535 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 09:50:09,535 - INFO - ##################################################
+2024-10-24 09:50:09,535 - INFO - Processing file: Year_over_Year_Spend_Growth
+2024-10-24 09:50:09,535 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Spend_Distribution_Across_Card_Types
+2024-10-24 09:50:09,536 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Year_over_Year_Spend_Growth
+2024-10-24 09:50:09,537 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 09:50:09,537 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 09:50:09,541 - INFO - Read DataFrame with 1 rows
+2024-10-24 09:50:09,541 - INFO - Generating content using File_content_generator...
+2024-10-24 09:50:09,542 - INFO - Read DataFrame with 4 rows
+2024-10-24 09:50:09,542 - INFO - Generating content using File_content_generator...
+2024-10-24 09:50:09,557 - INFO - Appending to existing log file.
+2024-10-24 09:50:09,558 - INFO - ##################################################
+2024-10-24 09:50:09,558 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 09:50:09,558 - INFO - ##################################################
+2024-10-24 09:50:09,558 - INFO - Processing file: Spend_by_Gender_Across_Cities
+2024-10-24 09:50:09,559 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Spend_by_Gender_Across_Cities
+2024-10-24 09:50:09,560 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 09:50:09,566 - INFO - Appending to existing log file.
+2024-10-24 09:50:09,566 - INFO - ##################################################
+2024-10-24 09:50:09,566 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 09:50:09,566 - INFO - ##################################################
+2024-10-24 09:50:09,566 - INFO - Processing file: Fastest_Growth_in_Spending
+2024-10-24 09:50:09,567 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Fastest_Growth_in_Spending
+2024-10-24 09:50:09,568 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 09:50:09,888 - INFO - Appending to existing log file.
+2024-10-24 09:50:09,888 - INFO - ##################################################
+2024-10-24 09:50:09,889 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 09:50:09,889 - INFO - ##################################################
+2024-10-24 09:50:09,889 - INFO - Processing file: Cumulative_Spend_by_City
+2024-10-24 09:50:09,890 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Cumulative_Spend_by_City
+2024-10-24 09:50:09,891 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 09:50:09,903 - INFO - Read DataFrame with 796 rows
+2024-10-24 09:50:09,970 - INFO - Excel report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Highest_Spending_Gender\Highest_Spending_Gender_report.xlsx
+2024-10-24 09:50:09,976 - INFO - CSV report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Highest_Spending_Gender\Highest_Spending_Gender_report.csv
+2024-10-24 09:50:09,979 - INFO - JSON report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Highest_Spending_Gender\Highest_Spending_Gender_report.json
+2024-10-24 09:50:10,006 - INFO - Parquet report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Highest_Spending_Gender\Highest_Spending_Gender_report.parquet
+2024-10-24 09:50:10,245 - INFO - Excel report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Cumulative_Spend_by_City\Cumulative_Spend_by_City_report.xlsx
+2024-10-24 09:50:10,250 - INFO - CSV report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Cumulative_Spend_by_City\Cumulative_Spend_by_City_report.csv
+2024-10-24 09:50:10,252 - INFO - JSON report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Cumulative_Spend_by_City\Cumulative_Spend_by_City_report.json
+2024-10-24 09:50:10,274 - INFO - Parquet report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Cumulative_Spend_by_City\Cumulative_Spend_by_City_report.parquet
+2024-10-24 09:50:21,708 - INFO - HTTP Request: POST https://api.cohere.com/v2/chat "HTTP/1.1 200 OK"
+2024-10-24 09:50:21,716 - ERROR - An error occurred: Expecting property name enclosed in double quotes: line 3 column 36 (char 609)
+Traceback (most recent call last):
+  File "C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\scripts\Output_Generation.py", line 67, in <module>
+    description_list = File_content_generator(df)  # Add additional parameters as needed
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\scripts\File_content_generator.py", line 48, in File_content_generator
+    data_dict = json.loads(dict_content)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\akhil\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\akhil\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\akhil\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 3 column 36 (char 609)
+2024-10-24 09:50:22,120 - INFO - HTTP Request: POST https://api.cohere.com/v2/chat "HTTP/1.1 200 OK"
+2024-10-24 09:50:22,594 - INFO - Excel report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Spend_Distribution_Across_Card_Types\Spend_Distribution_Across_Card_Types_report.xlsx
+2024-10-24 09:50:22,603 - INFO - CSV report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Spend_Distribution_Across_Card_Types\Spend_Distribution_Across_Card_Types_report.csv
+2024-10-24 09:50:22,605 - INFO - JSON report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Spend_Distribution_Across_Card_Types\Spend_Distribution_Across_Card_Types_report.json
+2024-10-24 09:50:22,652 - INFO - Parquet report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Spend_Distribution_Across_Card_Types\Spend_Distribution_Across_Card_Types_report.parquet
+2024-10-24 09:50:22,677 - INFO - PDF report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Spend_Distribution_Across_Card_Types\Spend_Distribution_Across_Card_Types_Report.pdf
+2024-10-24 09:50:22,767 - INFO - Word document saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Spend_Distribution_Across_Card_Types\Spend_Distribution_Across_Card_Types_Report.docx
+2024-10-24 09:50:23,621 - INFO - HTTP Request: POST https://api.cohere.com/v2/chat "HTTP/1.1 200 OK"
+2024-10-24 09:50:24,169 - INFO - Excel report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Top_5_Expense_Categories\Top_5_Expense_Categories_report.xlsx
+2024-10-24 09:50:24,176 - INFO - CSV report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Top_5_Expense_Categories\Top_5_Expense_Categories_report.csv
+2024-10-24 09:50:24,181 - INFO - JSON report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Top_5_Expense_Categories\Top_5_Expense_Categories_report.json
+2024-10-24 09:50:24,231 - INFO - Parquet report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Top_5_Expense_Categories\Top_5_Expense_Categories_report.parquet
+2024-10-24 09:50:24,283 - INFO - PDF report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Top_5_Expense_Categories\Top_5_Expense_Categories_Report.pdf
+2024-10-24 09:50:24,372 - INFO - Word document saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Top_5_Expense_Categories\Top_5_Expense_Categories_Report.docx
+2024-10-24 09:50:32,181 - INFO - HTTP Request: POST https://api.cohere.com/v2/chat "HTTP/1.1 200 OK"
+2024-10-24 09:50:32,724 - INFO - Excel report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Average_Spend_Per_Transaction_by_Card_Type\Average_Spend_Per_Transaction_by_Card_Type_report.xlsx
+2024-10-24 09:50:32,729 - INFO - CSV report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Average_Spend_Per_Transaction_by_Card_Type\Average_Spend_Per_Transaction_by_Card_Type_report.csv
+2024-10-24 09:50:32,731 - INFO - JSON report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Average_Spend_Per_Transaction_by_Card_Type\Average_Spend_Per_Transaction_by_Card_Type_report.json
+2024-10-24 09:50:32,768 - INFO - Parquet report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Average_Spend_Per_Transaction_by_Card_Type\Average_Spend_Per_Transaction_by_Card_Type_report.parquet
+2024-10-24 09:50:32,834 - INFO - PDF report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Average_Spend_Per_Transaction_by_Card_Type\Average_Spend_Per_Transaction_by_Card_Type_Report.pdf
+2024-10-24 09:50:33,139 - INFO - Word document saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Average_Spend_Per_Transaction_by_Card_Type\Average_Spend_Per_Transaction_by_Card_Type_Report.docx
+2024-10-24 09:50:56,199 - INFO - Read DataFrame with 1 rows
+2024-10-24 09:50:56,199 - INFO - Generating content using File_content_generator...
+2024-10-24 09:50:56,201 - INFO - Read DataFrame with 1876 rows
+2024-10-24 09:50:56,202 - INFO - Read DataFrame with 1783 rows
+2024-10-24 09:50:56,945 - INFO - Excel report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Spend_by_Gender_Across_Cities\Spend_by_Gender_Across_Cities_report.xlsx
+2024-10-24 09:50:56,957 - INFO - CSV report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Spend_by_Gender_Across_Cities\Spend_by_Gender_Across_Cities_report.csv
+2024-10-24 09:50:56,958 - INFO - Excel report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Weekend_vs_Weekday_Transaction_Patterns\Weekend_vs_Weekday_Transaction_Patterns_report.xlsx
+2024-10-24 09:50:56,963 - INFO - JSON report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Spend_by_Gender_Across_Cities\Spend_by_Gender_Across_Cities_report.json
+2024-10-24 09:50:56,969 - INFO - CSV report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Weekend_vs_Weekday_Transaction_Patterns\Weekend_vs_Weekday_Transaction_Patterns_report.csv
+2024-10-24 09:50:56,974 - INFO - JSON report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Weekend_vs_Weekday_Transaction_Patterns\Weekend_vs_Weekday_Transaction_Patterns_report.json
+2024-10-24 09:50:57,001 - INFO - Parquet report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Spend_by_Gender_Across_Cities\Spend_by_Gender_Across_Cities_report.parquet
+2024-10-24 09:50:57,015 - INFO - Parquet report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Weekend_vs_Weekday_Transaction_Patterns\Weekend_vs_Weekday_Transaction_Patterns_report.parquet
+2024-10-24 09:51:06,382 - INFO - HTTP Request: POST https://api.cohere.com/v2/chat "HTTP/1.1 200 OK"
+2024-10-24 09:51:06,979 - INFO - Excel report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Fastest_Growth_in_Spending\Fastest_Growth_in_Spending_report.xlsx
+2024-10-24 09:51:06,984 - INFO - CSV report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Fastest_Growth_in_Spending\Fastest_Growth_in_Spending_report.csv
+2024-10-24 09:51:06,986 - INFO - JSON report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Fastest_Growth_in_Spending\Fastest_Growth_in_Spending_report.json
+2024-10-24 09:51:07,018 - INFO - Parquet report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Fastest_Growth_in_Spending\Fastest_Growth_in_Spending_report.parquet
+2024-10-24 09:51:07,040 - INFO - PDF report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Fastest_Growth_in_Spending\Fastest_Growth_in_Spending_Report.pdf
+2024-10-24 09:51:07,118 - INFO - Word document saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-50-09\Fastest_Growth_in_Spending\Fastest_Growth_in_Spending_Report.docx
+2024-10-24 10:01:09,496 - INFO - Appending to existing log file.
+2024-10-24 10:01:09,510 - INFO - ##################################################
+2024-10-24 10:01:09,511 - INFO - STEP 3 : Creating Reports
+2024-10-24 10:01:09,511 - INFO - ##################################################
+2024-10-24 10:01:09,511 - INFO - Establishing database connection...
+2024-10-24 10:01:09,646 - INFO - Database connection established successfully.
+2024-10-24 10:01:09,662 - INFO - SQL filename: Cumulative Spend by City.sql
+2024-10-24 10:01:09,662 - INFO - SQL query read from file: WITH CumulativeSpending AS (
+    SELECT 
+        city,
+        transaction_date,
+        SUM(amount) OVER (PARTITION BY city ORDER BY transaction_date) AS cumulative_spend
+    FROM 
+        transactions
+)
+SELECT 
+    city,
+    MIN(transaction_date) AS first_date_to_reach_500k
+FROM 
+    CumulativeSpending
+WHERE 
+    cumulative_spend >= 500000
+GROUP BY 
+    city;
+
+2024-10-24 10:01:10,447 - INFO - SQL query executed successfully. Retrieved 796 rows.
+2024-10-24 10:01:10,455 - INFO - Cursor closed.
+2024-10-24 10:01:10,457 - INFO - Database connection closed.
+2024-10-24 10:01:14,389 - INFO - Appending to existing log file.
+2024-10-24 10:01:14,389 - INFO - ##################################################
+2024-10-24 10:01:14,389 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 10:01:14,389 - INFO - ##################################################
+2024-10-24 10:01:14,390 - INFO - Processing file: Cumulative_Spend_by_City
+2024-10-24 10:01:14,390 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_10-01-14\Cumulative_Spend_by_City
+2024-10-24 10:01:14,391 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 10:01:14,396 - INFO - Read DataFrame with 796 rows
+2024-10-24 10:01:14,678 - INFO - Excel report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_10-01-14\Cumulative_Spend_by_City\Cumulative_Spend_by_City_report.xlsx
+2024-10-24 10:01:14,684 - INFO - CSV report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_10-01-14\Cumulative_Spend_by_City\Cumulative_Spend_by_City_report.csv
+2024-10-24 10:01:14,686 - INFO - JSON report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_10-01-14\Cumulative_Spend_by_City\Cumulative_Spend_by_City_report.json
+2024-10-24 10:01:14,977 - INFO - Parquet report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_10-01-14\Cumulative_Spend_by_City\Cumulative_Spend_by_City_report.parquet
