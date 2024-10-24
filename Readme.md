@@ -1,6 +1,7 @@
 # Credit Card Transaction Analysis Project
 
 ## Overview
+
 This project analyzes credit card transaction data sourced from Kaggle, focusing on consumer spending habits in India. The analysis provides insights into spending categories, budget allocation, and consumer behavior trends. It employs Python for data processing, SQL for database management, and the Cohere API for generating insights.
 
 The project consists of a NiFi flow for orchestrating the data pipeline, multiple SQL scripts for data analysis, and Python scripts for generating outputs in various formats. The structured output is essential for report generation and decision-making.
