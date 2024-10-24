@@ -1,0 +1,19 @@
+2024-10-23 10:47:43,195 - INFO - Created new session log file.
+2024-10-23 10:47:43,197 - INFO - ##################################################
+2024-10-23 10:47:43,197 - INFO - STEP 1 : Extarcting data from kagggle
+2024-10-23 10:47:43,197 - INFO - ##################################################
+2024-10-23 10:47:43,197 - INFO - Starting data download...
+2024-10-23 10:47:45,184 - INFO - Files in the zip archive: ['Credit card transactions - India - Simple.csv']
+2024-10-23 10:47:45,184 - INFO - Processing the data in chunks...
+2024-10-23 10:47:45,203 - INFO - Processed 10000 rows of data.
+2024-10-23 10:47:45,221 - INFO - Processed 10000 rows of data.
+2024-10-23 10:47:45,231 - INFO - Processed 6052 rows of data.
+2024-10-23 10:47:45,297 - INFO - Data processing and transmission to NiFi completed successfully.
+2024-10-23 10:47:55,891 - INFO - Appending to existing log file.
+2024-10-23 10:48:45,800 - INFO - Appending to existing log file.
+2024-10-23 10:48:45,935 - INFO - ##################################################
+2024-10-23 10:48:45,935 - INFO - STEP 2 : Pushing the data to table
+2024-10-23 10:48:45,936 - INFO - ##################################################
+2024-10-23 10:48:45,976 - INFO - Table 'transactions' created.
+2024-10-23 10:49:09,871 - INFO - Data processing completed successfully. Total records pushed: 26052.
+2024-10-23 11:13:51,047 - INFO - Appending to existing log file.

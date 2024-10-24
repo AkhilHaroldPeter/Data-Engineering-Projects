@@ -1,0 +1,11 @@
+2024-10-24 09:29:03,999 - INFO - Created new session log file.
+2024-10-24 09:29:04,001 - INFO - ##################################################
+2024-10-24 09:29:04,001 - INFO - STEP 1 : Extarcting data from kagggle
+2024-10-24 09:29:04,001 - INFO - ##################################################
+2024-10-24 09:29:04,001 - INFO - Starting data download...
+2024-10-24 09:29:05,929 - INFO - Files in the zip archive: ['Credit card transactions - India - Simple.csv']
+2024-10-24 09:29:05,929 - INFO - Processing the data in chunks...
+2024-10-24 09:29:05,954 - INFO - Processed 10000 rows of data.
+2024-10-24 09:29:05,980 - INFO - Processed 10000 rows of data.
+2024-10-24 09:29:05,996 - INFO - Processed 6052 rows of data.
+2024-10-24 09:29:06,078 - INFO - Data processing and transmission to NiFi completed successfully.

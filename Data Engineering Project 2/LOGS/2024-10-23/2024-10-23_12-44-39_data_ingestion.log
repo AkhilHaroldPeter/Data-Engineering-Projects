@@ -1,0 +1,161 @@
+2024-10-23 12:44:39,622 - INFO - Created new log file.
+2024-10-23 12:44:39,622 - INFO - Created new log file.
+2024-10-23 12:44:39,622 - INFO - ##################################################
+2024-10-23 12:44:39,622 - INFO - STEP 3 : Creating Reports
+2024-10-23 12:44:39,623 - INFO - ##################################################
+2024-10-23 12:44:39,623 - INFO - Appending to existing log file.
+2024-10-23 12:44:39,623 - INFO - Establishing database connection...
+2024-10-23 12:44:39,623 - INFO - ##################################################
+2024-10-23 12:44:39,623 - INFO - ##################################################
+2024-10-23 12:44:39,623 - INFO - STEP 3 : Creating Reports
+2024-10-23 12:44:39,623 - INFO - STEP 3 : Creating Reports
+2024-10-23 12:44:39,623 - INFO - ##################################################
+2024-10-23 12:44:39,623 - INFO - ##################################################
+2024-10-23 12:44:39,623 - INFO - ##################################################
+2024-10-23 12:44:39,623 - INFO - Establishing database connection...
+2024-10-23 12:44:39,623 - INFO - STEP 3 : Creating Reports
+2024-10-23 12:44:39,623 - INFO - Establishing database connection...
+2024-10-23 12:44:39,623 - INFO - ##################################################
+2024-10-23 12:44:39,623 - INFO - Establishing database connection...
+2024-10-23 12:44:39,625 - INFO - Appending to existing log file.
+2024-10-23 12:44:39,625 - INFO - Appending to existing log file.
+2024-10-23 12:44:39,626 - INFO - ##################################################
+2024-10-23 12:44:39,626 - INFO - STEP 3 : Creating Reports
+2024-10-23 12:44:39,626 - INFO - ##################################################
+2024-10-23 12:44:39,626 - INFO - ##################################################
+2024-10-23 12:44:39,626 - INFO - STEP 3 : Creating Reports
+2024-10-23 12:44:39,626 - INFO - Establishing database connection...
+2024-10-23 12:44:39,626 - INFO - ##################################################
+2024-10-23 12:44:39,626 - INFO - Appending to existing log file.
+..
+2024-10-23 12:44:39,627 - INFO - ##################################################
+2024-10-23 12:44:39,627 - INFO - STEP 3 : Creating Reports
+2024-10-23 12:44:39,627 - INFO - ##################################################
+2024-10-23 12:44:39,627 - INFO - ##################################################
+2024-10-23 12:44:39,627 - INFO - Establishing database connection...
+2024-10-23 12:44:39,627 - INFO - STEP 3 : Creating Reports
+2024-10-23 12:44:39,627 - INFO - ##################################################
+2024-10-23 12:44:39,627 - INFO - Establishing database connection...
+2024-10-23 12:44:39,738 - INFO - Database connection established successfully.
+2024-10-23 12:44:39,739 - INFO - Database connection established successfully.
+2024-10-23 12:44:39,739 - ERROR - An error occurred: [Errno 2] No such file or directory: ''
+2024-10-23 12:44:39,739 - INFO - Cursor closed.
+2024-10-23 12:44:39,739 - INFO - Database connection established successfully.
+2024-10-23 12:44:39,739 - INFO - Database connection established successfully.
+2024-10-23 12:44:39,739 - INFO - Database connection established successfully.
+2024-10-23 12:44:39,739 - ERROR - An error occurred: [Errno 2] No such file or directory: 'Weekend vs Weekday Transaction Patterns.sql'
+2024-10-23 12:44:39,739 - ERROR - An error occurred: [Errno 2] No such file or directory: ''
+2024-10-23 12:44:39,740 - INFO - Database connection closed.
+2024-10-23 12:44:39,740 - INFO - Database connection established successfully.
+2024-10-23 12:44:39,740 - INFO - Cursor closed.
+2024-10-23 12:44:39,740 - INFO - Cursor closed.
+2024-10-23 12:44:39,740 - INFO - Database connection closed.
+2024-10-23 12:44:39,746 - INFO - SQL filename: Spend by Gender Across Cities.sql
+2024-10-23 12:44:39,747 - INFO - SQL query read from file: SELECT 
+    city,
+    gender,
+    SUM(amount) AS total_spend,
+    (SUM(amount) * 100.0 / (SELECT SUM(amount) FROM transactions WHERE city = ct.city)) AS percentage_contribution
+FROM 
+    transactions ct
+GROUP BY 
+    city, 
+    gender;
+2024-10-23 12:44:39,747 - INFO - SQL query read from file: WITH YearlySpend AS (
+    SELECT 
+        city,
+        card_type,
+        YEAR(transaction_date) AS year,
+        SUM(amount) AS total_spend
+    FROM 
+        transactions
+    WHERE 
+        YEAR(transaction_date) IN (2013, 2014)
+    GROUP BY 
+        city, 
+        card_type, 
+        YEAR(transaction_date)
+)
+SELECT 
+    y2014.city,
+    y2014.card_type,
+    (y2014.total_spend - COALESCE(y2013.total_spend, 0)) AS growth
+FROM 
+    YearlySpend y2014
+LEFT JOIN 
+    YearlySpend y2013 
+ON 
+    y2014.city = y2013.city 
+    AND y2014.card_type = y2013.card_type 
+    AND y2013.year = 2013
+WHERE 
+    y2014.year = 2014
+ORDER BY 
+    growth DESC
+OFFSET 0 ROWS FETCH NEXT 1 ROW ONLY; -- SQL Server syntax for LIMIT
+
+2024-10-23 12:44:39,747 - INFO - SQL filename: Average Spend Per Transaction 2024-10-23 12:44:39,747 - INFO - SQL query read from file: WITH CumulativeSpending AS (
+    SELECT 
+        city,
+        transaction_date,
+        SUM(amount) OVER (PARTITION BY city ORDER BY transaction_date) AS cumulative_spend
+    FROM 
+        transactions
+)
+SELECT 
+    city,
+    MIN(transaction_date) AS first_date_to_reach_500k
+FROM 
+    CumulativeSpending
+WHERE 
+    cumulative_spend >= 500000
+GROUP BY 
+    city;
+
+2024-10-23 12:44:39,747 - INFO - SQL query read from file: SELECT 
+    card_type, 
+    YEAR(transaction_date) AS transaction_year,
+    MONTH(transaction_date) AS transaction_month,
+    AVG(amount) AS average_spend_per_transaction
+FROM 
+    transactions
+GROUP BY 
+    card_type, 
+    YEAR(transaction_date),
+    MONTH(transaction_date);
+2024-10-23 12:44:39,747 - INFO - SQL filename: Fastest Growth in Spending.sql
+2024-10-23 12:44:39,748 - INFO - SQL query read from file: WITH TransactionCounts AS (
+    SELECT 
+        card_type,
+        COUNT(*) AS transaction_count,
+        SUM(amount) AS total_spend
+    FROM 
+        transactions
+    GROUP BY 
+        card_type
+)
+SELECT TOP 1 
+    card_type,
+    transaction_count,
+    total_spend,
+    (total_spend * 1.0 / transaction_count) AS average_spend_per_transaction
+FROM 
+    TransactionCounts
+ORDER BY 
+    average_spend_per_transaction DESC;
+
+2024-10-23 12:44:39,932 - INFO - SQL query executed successfully. Retrieved 1 rows.
+2024-10-23 12:44:39,937 - INFO - Cursor closed.
+2024-10-23 12:44:39,937 - INFO - SQL query executed successfully. Retrieved 1 rows.
+2024-10-23 12:44:39,939 - INFO - Database connection closed.
+2024-10-23 12:44:39,941 - INFO - Cursor closed.
+2024-10-23 12:44:39,943 - INFO - SQL query executed successfully. Retrieved 1876 rows.
+2024-10-23 12:44:39,949 - INFO - Database connection closed.
+2024-10-23 12:44:39,958 - INFO - Cursor closed.
+2024-10-23 12:44:39,959 - INFO - Database connection closed.
+2024-10-23 12:44:39,963 - INFO - SQL query executed successfully. Retrieved 80 rows.
+2024-10-23 12:44:39,970 - INFO - Cursor closed.
+2024-10-23 12:44:39,970 - INFO - Database connection closed.
+2024-10-23 12:44:40,463 - INFO - SQL query executed successfully. Retrieved 796 rows.
+2024-10-23 12:44:40,470 - INFO - Cursor closed.
+2024-10-23 12:44:40,472 - INFO - Database connection closed.

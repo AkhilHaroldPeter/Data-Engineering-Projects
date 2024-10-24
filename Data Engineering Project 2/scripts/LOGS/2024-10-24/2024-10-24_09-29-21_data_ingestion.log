@@ -1,0 +1,145 @@
+2024-10-24 09:29:21,221 - INFO - Created new log file.
+2024-10-24 09:29:21,222 - INFO - ##################################################
+2024-10-24 09:29:21,222 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 09:29:21,222 - INFO - ##################################################
+2024-10-24 09:29:21,222 - INFO - Processing file: Fastest_Growth_in_Spending
+2024-10-24 09:29:21,223 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Fastest_Growth_in_Spending
+2024-10-24 09:29:21,226 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 09:29:21,232 - INFO - Read DataFrame with 1 rows
+2024-10-24 09:29:21,232 - INFO - Generating content using File_content_generator...
+2024-10-24 09:29:21,256 - INFO - Created new log file.
+2024-10-24 09:29:21,256 - INFO - ##################################################
+2024-10-24 09:29:21,257 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 09:29:21,257 - INFO - ##################################################
+2024-10-24 09:29:21,257 - INFO - Processing file: Highest_Spending_Gender
+2024-10-24 09:29:21,258 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Highest_Spending_Gender
+2024-10-24 09:29:21,260 - INFO - Created new log file.
+2024-10-24 09:29:21,259 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 09:29:21,260 - INFO - ##################################################
+2024-10-24 09:29:21,260 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 09:29:21,260 - INFO - ##################################################
+2024-10-24 09:29:21,260 - INFO - Processing file: Average_Spend_Per_Transaction_by_Card_Type
+2024-10-24 09:29:21,261 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Average_Spend_Per_Transaction_by_Card_Type
+2024-10-24 09:29:21,261 - INFO - Created new log file.
+2024-10-24 09:29:21,261 - INFO - ##################################################
+2024-10-24 09:29:21,261 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 09:29:21,261 - INFO - ##################################################
+2024-10-24 09:29:21,262 - INFO - Processing file: Spend_Distribution_Across_Card_Types
+2024-10-24 09:29:21,262 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 09:29:21,262 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Spend_Distribution_Across_Card_Types
+2024-10-24 09:29:21,264 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 09:29:21,269 - INFO - Read DataFrame with 80 rows
+2024-10-24 09:29:21,269 - INFO - Generating content using File_content_generator...
+2024-10-24 09:29:21,269 - INFO - Read DataFrame with 1876 rows
+2024-10-24 09:29:21,269 - INFO - Generating content using File_content_generator...
+2024-10-24 09:29:21,270 - INFO - Read DataFrame with 4 rows
+2024-10-24 09:29:21,270 - INFO - Generating content using File_content_generator...
+2024-10-24 09:29:21,294 - INFO - Created new log file.
+2024-10-24 09:29:21,295 - INFO - ##################################################
+2024-10-24 09:29:21,295 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 09:29:21,295 - INFO - ##################################################
+2024-10-24 09:29:21,295 - INFO - Processing file: Weekend_vs_Weekday_Transaction_Patterns
+2024-10-24 09:29:21,296 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Weekend_vs_Weekday_Transaction_Patterns
+2024-10-24 09:29:21,297 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 09:29:21,307 - INFO - Read DataFrame with 1783 rows
+2024-10-24 09:29:21,307 - INFO - Generating content using File_content_generator...
+2024-10-24 09:29:21,312 - INFO - Created new log file.
+2024-10-24 09:29:21,312 - INFO - ##################################################
+2024-10-24 09:29:21,312 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 09:29:21,312 - INFO - ##################################################
+2024-10-24 09:29:21,312 - INFO - Processing file: Spend_by_Gender_Across_Cities
+2024-10-24 09:29:21,313 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Spend_by_Gender_Across_Cities
+2024-10-24 09:29:21,314 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 09:29:21,322 - INFO - Read DataFrame with 1876 rows
+2024-10-24 09:29:21,322 - INFO - Generating content using File_content_generator...
+2024-10-24 09:29:21,323 - INFO - Created new log file.
+2024-10-24 09:29:21,323 - INFO - ##################################################
+2024-10-24 09:29:21,323 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 09:29:21,323 - INFO - ##################################################
+2024-10-24 09:29:21,324 - INFO - Processing file: Top_5_Expense_Categories
+2024-10-24 09:29:21,325 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Top_5_Expense_Categories
+2024-10-24 09:29:21,326 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 09:29:21,331 - INFO - Read DataFrame with 5 rows
+2024-10-24 09:29:21,331 - INFO - Generating content using File_content_generator...
+2024-10-24 09:29:21,361 - INFO - Created new log file.
+2024-10-24 09:29:21,362 - INFO - ##################################################
+2024-10-24 09:29:21,362 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 09:29:21,362 - INFO - ##################################################
+2024-10-24 09:29:21,362 - INFO - Processing file: Year_over_Year_Spend_Growth
+2024-10-24 09:29:21,363 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Year_over_Year_Spend_Growth
+2024-10-24 09:29:21,364 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 09:29:21,368 - INFO - Read DataFrame with 1 rows
+2024-10-24 09:29:21,369 - INFO - Generating content using File_content_generator...
+2024-10-24 09:29:21,656 - INFO - Created new log file.
+2024-10-24 09:29:21,657 - INFO - ##################################################
+2024-10-24 09:29:21,657 - INFO - STEP 4 : GENERATING OUTPUTS
+2024-10-24 09:29:21,657 - INFO - ##################################################
+2024-10-24 09:29:21,657 - INFO - Processing file: Cumulative_Spend_by_City
+2024-10-24 09:29:21,658 - INFO - Created folder structure for: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Cumulative_Spend_by_City
+2024-10-24 09:29:21,659 - INFO - Loaded configuration from: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\config\iconfig.ini
+2024-10-24 09:29:21,665 - INFO - Read DataFrame with 796 rows
+2024-10-24 09:29:21,665 - INFO - Generating content using File_content_generator...
+2024-10-24 09:29:30,560 - INFO - HTTP Request: POST https://api.cohere.com/v2/chat "HTTP/1.1 200 OK"
+2024-10-24 09:29:31,177 - INFO - Excel report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Fastest_Growth_in_Spending\Fastest_Growth_in_Spending_report.xlsx
+2024-10-24 09:29:31,183 - INFO - CSV report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Fastest_Growth_in_Spending\Fastest_Growth_in_Spending_report.csv
+2024-10-24 09:29:31,184 - INFO - JSON report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Fastest_Growth_in_Spending\Fastest_Growth_in_Spending_report.json
+2024-10-24 09:29:31,225 - INFO - Parquet report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Fastest_Growth_in_Spending\Fastest_Growth_in_Spending_report.parquet
+2024-10-24 09:29:31,248 - INFO - PDF report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Fastest_Growth_in_Spending\Fastest_Growth_in_Spending_Report.pdf
+2024-10-24 09:29:31,318 - INFO - Word document saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Fastest_Growth_in_Spending\Fastest_Growth_in_Spending_Report.docx
+2024-10-24 09:29:33,556 - INFO - HTTP Request: POST https://api.cohere.com/v2/chat "HTTP/1.1 200 OK"
+2024-10-24 09:29:33,956 - INFO - Excel report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Year_over_Year_Spend_Growth\Year_over_Year_Spend_Growth_report.xlsx
+2024-10-24 09:29:33,963 - INFO - CSV report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Year_over_Year_Spend_Growth\Year_over_Year_Spend_Growth_report.csv
+2024-10-24 09:29:33,965 - INFO - JSON report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Year_over_Year_Spend_Growth\Year_over_Year_Spend_Growth_report.json
+2024-10-24 09:29:33,997 - INFO - Parquet report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Year_over_Year_Spend_Growth\Year_over_Year_Spend_Growth_report.parquet
+2024-10-24 09:29:34,012 - INFO - PDF report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Year_over_Year_Spend_Growth\Year_over_Year_Spend_Growth_Report.pdf
+2024-10-24 09:29:34,085 - INFO - Word document saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Year_over_Year_Spend_Growth\Year_over_Year_Spend_Growth_Report.docx
+2024-10-24 09:29:41,322 - INFO - HTTP Request: POST https://api.cohere.com/v2/chat "HTTP/1.1 200 OK"
+2024-10-24 09:29:41,381 - INFO - HTTP Request: POST https://api.cohere.com/v2/chat "HTTP/1.1 200 OK"
+2024-10-24 09:29:41,890 - INFO - Excel report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Top_5_Expense_Categories\Top_5_Expense_Categories_report.xlsx
+2024-10-24 09:29:41,896 - INFO - CSV report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Top_5_Expense_Categories\Top_5_Expense_Categories_report.csv
+2024-10-24 09:29:41,898 - INFO - JSON report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Top_5_Expense_Categories\Top_5_Expense_Categories_report.json
+2024-10-24 09:29:41,917 - INFO - Excel report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Average_Spend_Per_Transaction_by_Card_Type\Average_Spend_Per_Transaction_by_Card_Type_report.xlsx
+2024-10-24 09:29:41,923 - INFO - CSV report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Average_Spend_Per_Transaction_by_Card_Type\Average_Spend_Per_Transaction_by_Card_Type_report.csv
+2024-10-24 09:29:41,925 - INFO - JSON report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Average_Spend_Per_Transaction_by_Card_Type\Average_Spend_Per_Transaction_by_Card_Type_report.json
+2024-10-24 09:29:41,933 - INFO - Parquet report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Top_5_Expense_Categories\Top_5_Expense_Categories_report.parquet
+2024-10-24 09:29:41,957 - INFO - Parquet report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Average_Spend_Per_Transaction_by_Card_Type\Average_Spend_Per_Transaction_by_Card_Type_report.parquet
+2024-10-24 09:29:41,971 - INFO - PDF report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Top_5_Expense_Categories\Top_5_Expense_Categories_Report.pdf
+2024-10-24 09:29:42,052 - INFO - Word document saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Top_5_Expense_Categories\Top_5_Expense_Categories_Report.docx
+2024-10-24 09:29:43,014 - INFO - HTTP Request: POST https://api.cohere.com/v2/chat "HTTP/1.1 200 OK"
+2024-10-24 09:29:43,019 - ERROR - An error occurred: Expecting value: line 1 column 1 (char 0)
+Traceback (most recent call last):
+  File "C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\scripts\Output_Generation.py", line 67, in <module>
+    description_list = File_content_generator(df)  # Add additional parameters as needed
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\scripts\File_content_generator.py", line 48, in File_content_generator
+    data_dict = json.loads(dict_content)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\akhil\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\akhil\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\akhil\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2024-10-24 09:29:49,320 - INFO - HTTP Request: POST https://api.cohere.com/v2/chat "HTTP/1.1 200 OK"
+2024-10-24 09:29:49,983 - INFO - Excel report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Cumulative_Spend_by_City\Cumulative_Spend_by_City_report.xlsx
+2024-10-24 09:29:49,991 - INFO - CSV report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Cumulative_Spend_by_City\Cumulative_Spend_by_City_report.csv
+2024-10-24 09:29:49,997 - INFO - JSON report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Cumulative_Spend_by_City\Cumulative_Spend_by_City_report.json
+2024-10-24 09:29:50,049 - INFO - Parquet report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Cumulative_Spend_by_City\Cumulative_Spend_by_City_report.parquet
+2024-10-24 09:30:06,863 - INFO - HTTP Request: POST https://api.cohere.com/v2/chat "HTTP/1.1 200 OK"
+2024-10-24 09:30:07,493 - INFO - Excel report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Highest_Spending_Gender\Highest_Spending_Gender_report.xlsx
+2024-10-24 09:30:07,509 - INFO - CSV report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Highest_Spending_Gender\Highest_Spending_Gender_report.csv
+2024-10-24 09:30:07,517 - INFO - JSON report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Highest_Spending_Gender\Highest_Spending_Gender_report.json
+2024-10-24 09:30:07,573 - INFO - Parquet report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Highest_Spending_Gender\Highest_Spending_Gender_report.parquet
+2024-10-24 09:30:32,211 - INFO - HTTP Request: POST https://api.cohere.com/v2/chat "HTTP/1.1 200 OK"
+2024-10-24 09:30:32,908 - INFO - Excel report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Spend_by_Gender_Across_Cities\Spend_by_Gender_Across_Cities_report.xlsx
+2024-10-24 09:30:32,922 - INFO - CSV report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Spend_by_Gender_Across_Cities\Spend_by_Gender_Across_Cities_report.csv
+2024-10-24 09:30:32,930 - INFO - JSON report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Spend_by_Gender_Across_Cities\Spend_by_Gender_Across_Cities_report.json
+2024-10-24 09:30:32,971 - INFO - Parquet report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Spend_by_Gender_Across_Cities\Spend_by_Gender_Across_Cities_report.parquet
+2024-10-24 09:31:10,386 - INFO - HTTP Request: POST https://api.cohere.com/v2/chat "HTTP/1.1 200 OK"
+2024-10-24 09:31:10,864 - INFO - Excel report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Weekend_vs_Weekday_Transaction_Patterns\Weekend_vs_Weekday_Transaction_Patterns_report.xlsx
+2024-10-24 09:31:10,879 - INFO - CSV report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Weekend_vs_Weekday_Transaction_Patterns\Weekend_vs_Weekday_Transaction_Patterns_report.csv
+2024-10-24 09:31:10,886 - INFO - JSON report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Weekend_vs_Weekday_Transaction_Patterns\Weekend_vs_Weekday_Transaction_Patterns_report.json
+2024-10-24 09:31:10,926 - INFO - Parquet report saved to: C:\Users\akhil\Programming\Data Engineering Projects\Data Engineering Project 2\data\output\2024-10-24\2024-10-24_09-29-21\Weekend_vs_Weekday_Transaction_Patterns\Weekend_vs_Weekday_Transaction_Patterns_report.parquet
