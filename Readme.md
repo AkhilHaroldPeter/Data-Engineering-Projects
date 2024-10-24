@@ -42,7 +42,7 @@ Before running the project, ensure you have the following software installed:
 
 For the NiFi data flow associated with this project, please refer to the separate repository:
 
-- [NiFi](https://github.com/AkhilHaroldPeter/Nifi/Projects/Data%20Engineering%20Project%202)
+- [NiFi](https://github.com/AkhilHaroldPeter/Nifi/tree/master/Projects/Data%20Engineering%20Project%202)
 
 This repository contains:
 - NiFi templates
