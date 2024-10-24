@@ -37,6 +37,7 @@ Before running the project, ensure you have the following software installed:
    - [PyCharm](https://www.jetbrains.com/pycharm/download/)
    - [Jupyter Notebook](https://jupyter.org/install)
    
+   
 ## NiFi Flow Repository
 
 For the NiFi data flow associated with this project, please refer to the separate repository:
